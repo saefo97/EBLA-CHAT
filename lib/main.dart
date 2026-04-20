@@ -1,3 +1,4 @@
+import 'package:ebla/sign_in_screen.dart';
 import 'package:ebla/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: SignInScreen(),
     );
   }
 }

@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
-  const CustomButton({super.key, required this.title});
+  double? width;
+  CustomButton({super.key, required this.title,
+  this.width = 150
+
+
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
+      width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30.0),
         gradient: title == "Sign In" ? kLightGradient : kDarkGradient,
