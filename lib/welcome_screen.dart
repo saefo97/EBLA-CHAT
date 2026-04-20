@@ -100,9 +100,6 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-
-
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
