@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class BackgroundDecoration extends StatelessWidget {
   final Widget child;
@@ -104,7 +104,10 @@ class BackgroundDecoration extends StatelessWidget {
             ),
           ),
 
-          child
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: child,
+          )
 
         ],
       ),

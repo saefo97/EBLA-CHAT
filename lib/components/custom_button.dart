@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
+  final void Function()? onPressed;
   double? width;
   CustomButton({super.key, required this.title,
-  this.width = 150
+  this.width = 150, this.onPressed
 
 
   });
@@ -20,7 +21,7 @@ class CustomButton extends StatelessWidget {
       ),
 
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: onPressed,
         height: 48.0,
         color: Colors.transparent,
         elevation: 0.0,
