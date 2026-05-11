@@ -1,11 +1,18 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import '../components/animated_button.dart';
 import '../components/background_decoration.dart';
-import '../components/custom_button.dart';
 import '../components/custom_text_form_field.dart';
+import '../constants.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
+class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
+
+  @override
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
+}
+
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +33,18 @@ class ForgetPasswordScreen extends StatelessWidget {
                 ),
                 SizedBox(width: 24.0),
                 DefaultTextStyle(
-
                   style: const TextStyle(
-                      fontSize: 26.0,
-                      fontFamily: 'times',
-                      color: Colors.blue
+                    fontSize: 26.0,
+                    fontFamily: 'times',
+                    color: Colors.blue,
                   ),
                   child: AnimatedTextKit(
                     repeatForever: false,
                     totalRepeatCount: 1,
                     animatedTexts: [
-                      TypewriterAnimatedText('Forget Password',
-                          speed: Duration(
-                            milliseconds: 100,
-                          )
-
+                      TypewriterAnimatedText(
+                        'Forget Password',
+                        speed: Duration(milliseconds: 100),
                       ),
                     ],
                   ),
@@ -48,12 +52,14 @@ class ForgetPasswordScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Email",),
+            CustomTextFormField(title: "Email"),
             SizedBox(height: 8),
-            // TODO: زر لنسيان كلمة المرور
+        AnimatedButton()
           ],
         ),
       ),
     );
   }
 }
+
+

@@ -27,42 +27,36 @@ class SignUpScreen extends StatelessWidget {
 
                 SizedBox(width: 24.0),
                 DefaultTextStyle(
-
                   style: const TextStyle(
-                      fontSize: 26.0,
-                      fontFamily: 'times',
-                      color: Colors.blue
+                    fontSize: 26.0,
+                    fontFamily: 'times',
+                    color: Colors.blue,
                   ),
                   child: AnimatedTextKit(
                     repeatForever: false,
                     totalRepeatCount: 1,
                     animatedTexts: [
-                      TypewriterAnimatedText('Sign Up',
-                          speed: Duration(
-                            milliseconds: 100,
-                          )
-
+                      TypewriterAnimatedText(
+                        'Sign Up',
+                        speed: Duration(milliseconds: 100),
                       ),
                     ],
                   ),
                 ),
-
               ],
             ),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Email",),
+            CustomTextFormField(title: "Email"),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Password",),
+            CustomTextFormField(title: "Password", isPassword: true),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Confirm Password",),
+            CustomTextFormField(title: "Confirm Password", isPassword: true),
             SizedBox(height: 8),
             Hero(
-                tag: "signUp",
-                child:
-                CustomButton(title: 'Sign Up',
-                  width: 200,
-
-                )),          ],
+              tag: "signUp",
+              child: CustomButton(title: 'Sign Up', width: 200),
+            ),
+          ],
         ),
       ),
     );

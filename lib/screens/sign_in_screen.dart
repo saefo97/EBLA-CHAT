@@ -49,7 +49,10 @@ class SignInScreen extends StatelessWidget {
             SizedBox(height: 8),
             CustomTextFormField(title: "Email"),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Password"),
+            CustomTextFormField(title: "Password",
+            isPassword: true,
+
+            ),
             Align(
               alignment: AlignmentGeometry.centerRight,
               child: TextButton(

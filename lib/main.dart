@@ -1,3 +1,5 @@
+import 'package:ebla/screens/chat_screen.dart';
+import 'package:ebla/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/welcome_screen.dart';
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: ChatScreen(),
     );
   }
 }
