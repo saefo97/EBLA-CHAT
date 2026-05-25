@@ -1,13 +1,16 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ebla/constants.dart';
 import 'package:ebla/screens/forget_password_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../components/background_decoration.dart';
 import '../components/custom_button.dart';
 import '../components/custom_text_form_field.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+  SignInScreen({super.key});
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,11 +50,12 @@ class SignInScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Email"),
+            CustomTextFormField(title: "Email", controller: emailController),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Password",
-            isPassword: true,
-
+            CustomTextFormField(
+              title: "Password",
+              controller: passwordController,
+              isPassword: true,
             ),
             Align(
               alignment: AlignmentGeometry.centerRight,
@@ -64,12 +68,23 @@ class SignInScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text("Forget Password?", style: TextStyle(color: kDark1)),
+                child: Text(
+                  "Forget Password?",
+                  style: TextStyle(color: kDark1),
+                ),
               ),
             ),
             Hero(
               tag: "signIn",
-              child: CustomButton(title: 'Sign In', width: 200),
+              child: CustomButton(title: 'Sign In', width: 200,
+                onPressed: (){
+                  FirebaseAuth.instance.
+                  signInWithEmailAndPassword(email: emailController.text.trim(),
+                      password: passwordController.text.trim());
+                },
+
+
+              ),
             ),
           ],
         ),

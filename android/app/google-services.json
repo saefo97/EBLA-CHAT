@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1023324803688",
+    "project_id": "ebla-chat",
+    "storage_bucket": "ebla-chat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023324803688:android:cd6794024fb6d918e0e1dd",
+        "android_client_info": {
+          "package_name": "com.example.ebla"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrUMOZYhY0DBfEZq8rRqf6pmauIemWaaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

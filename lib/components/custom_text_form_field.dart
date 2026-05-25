@@ -5,10 +5,11 @@ import '../constants.dart';
 class CustomTextFormField extends StatefulWidget {
   final String title;
   bool isPassword;
+  final TextEditingController controller;
   CustomTextFormField({
     super.key,
     required this.title,
-    this.isPassword = false,
+    this.isPassword = false, required this.controller,
   });
 
   @override
@@ -21,6 +22,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: kDark1,
+      controller: widget.controller,
       obscureText: widget.isPassword ? isHidden : false,
       decoration: InputDecoration(
         // icon: Icon(Icons.email),

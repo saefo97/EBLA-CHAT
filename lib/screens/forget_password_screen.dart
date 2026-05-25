@@ -13,6 +13,7 @@ class ForgetPasswordScreen extends StatefulWidget {
 }
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+  TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +53,12 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               ],
             ),
             SizedBox(height: 8),
-            CustomTextFormField(title: "Email"),
+            CustomTextFormField(title: "Email", controller: emailController),
             SizedBox(height: 8),
-        AnimatedButton()
+            AnimatedButton(),
           ],
         ),
       ),
     );
   }
 }
-
-
