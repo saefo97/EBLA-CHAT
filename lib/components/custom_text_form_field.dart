@@ -5,11 +5,12 @@ import '../constants.dart';
 class CustomTextFormField extends StatefulWidget {
   final String title;
   bool isPassword;
+  final String? Function(String?)? validator;
   final TextEditingController controller;
   CustomTextFormField({
     super.key,
     required this.title,
-    this.isPassword = false, required this.controller,
+    this.isPassword = false, required this.controller, this.validator,
   });
 
   @override
@@ -21,6 +22,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: widget.validator,
       cursorColor: kDark1,
       controller: widget.controller,
       obscureText: widget.isPassword ? isHidden : false,
@@ -48,6 +50,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: kDark1, width: 3),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Colors.red.shade900, width: 2),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.red.shade700, width: 3),
         ),
         label: Text(widget.title, style: TextStyle(color: kDark1)),
       ),
